@@ -1,15 +1,25 @@
 @import '../../styles/common.scss';
 
-.container {
-  min-height: 200px;
-  min-width: 300px;
-
-  padding: 2rem;
-
+body {
   display: flex;
 
-  flex-direction: column;
+  nav {
+    background: wheat;
+    width: 2.6rem;
+    height: 20rem;
 
-  align-items: center;
-  justify-content: center;
+    div {
+      display: flex;
+      height: 1.8rem;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      border-bottom: 1px solid black;
+      cursor: pointer;
+      &:hover {
+        background: #f0f0f0;
+      }
+    }
+  }
 }
