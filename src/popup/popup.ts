@@ -27,7 +27,7 @@ navElements.forEach(element => {
 const updatePopup = () => {
   const popupHead = document.querySelector('#popup .head');
   
-  popupHead.innerHTML = `<h1>${navElements.find(element => element.value === currentTab).name}</h1>`;
+  popupHead.innerHTML = `<h2>${navElements.find(element => element.value === currentTab).name}</h2>`;
   const popupBody = document.querySelector('#popup .body');
   popupBody.innerHTML = `<div>${currentTab}</div>`;
 }
