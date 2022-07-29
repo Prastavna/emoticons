@@ -1,5 +1,7 @@
+
 import emoticonsList from "./emoticonsList";
 import './emoticons.scss';
+import notyf from "../../../helpers/toast";
 
 const renderEmoticons = () => {
     const list = document.createElement("ul");
@@ -16,6 +18,7 @@ const renderEmoticons = () => {
         listItem.addEventListener("click", () => {
             // Copy the value to clipboard
             navigator.clipboard.writeText(emoticon.value);
+            notyf.success(`Copied ${emoticon.value} to clipboard`);
         })
         list.appendChild(listItem);
     })

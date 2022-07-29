@@ -37,7 +37,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.18.6",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "notyf": "^3.10.0"
   },
   "browserslist": "> 0.25%, not dead",
   "husky": {
