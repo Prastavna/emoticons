@@ -4,9 +4,20 @@ const filterList = (list: EmoticonObj[], filter: string) => {
     if (filter === "") {
         return list;
     }
-    return list.filter(item => {
-        return item.tags.some(tag => tag.includes(filter));
-    });
+
+    // Return an array of categories containing only those items whose tags contain the filter
+    const filteredList: EmoticonObj[] = []
+    list.forEach(category => {
+        if(category.items.some(item => item.tags.some(tag => tag.includes(filter)))) {
+            filteredList.push({
+                name: category.name,
+                value: category.value,
+                items: category.items.filter(item => item.tags.some(tag => tag.includes(filter)))
+            });
+        }
+    })
+
+    return filteredList;
 }
 
 export default filterList;
