@@ -19,9 +19,9 @@ const renderTabBody = (tabName: string) => {
 
     let searchText = ""
     searchBar.addEventListener("keyup", (e: KeyboardEvent) => {
-        // Accept alphanumeric characters only
-        if (e.key.match(/[a-zA-Z0-9]/)) {
-            searchText += e.key;
+        // Accept alphanumeric characters or backspace
+        if (e.key.match(/^[a-zA-Z0-9]$/) || e.key === "Backspace") {
+            searchText = searchBar.value;
             renderSearchResults(tabName, searchText);
         }
     })
