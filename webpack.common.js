@@ -9,8 +9,8 @@ module.exports = {
   entry: {
     serviceWorker: './src/serviceWorker.ts',
     contentScript: './src/contentScript.ts',
-    popup: './src/popup.ts',
-    options: './src/options.ts',
+    popup: './src/popup/popup.ts',
+    options: './src/options/options.ts',
   },
   module: {
     rules: [

@@ -1,7 +1,10 @@
-@import 'common.scss';
+@import '../../styles/common.scss';
 
 .container {
-  min-height: 100vh;
+  min-height: 200px;
+  min-width: 300px;
+
+  padding: 2rem;
 
   display: flex;
 
