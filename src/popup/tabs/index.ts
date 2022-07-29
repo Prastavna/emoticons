@@ -21,7 +21,8 @@ const renderTabBody = (tabName: string) => {
     searchBar.addEventListener("keyup", (e: KeyboardEvent) => {
         // Accept alphanumeric characters or backspace
         if (e.key.match(/^[a-zA-Z0-9]$/) || e.key === "Backspace") {
-            searchText = searchBar.value;
+            // remove special characters from search text
+            searchText = searchBar.value.replace(/[^a-zA-Z0-9]/g, "");;
             renderSearchResults(tabName, searchText);
         }
     })
