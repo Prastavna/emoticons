@@ -24,6 +24,7 @@ body {
   }
 
   #popup {
+    width: 100%;
     padding: 1rem;
 
     .head {
@@ -32,6 +33,10 @@ body {
         font-size: 1.5rem;
         margin: 0;
       }
+    }
+
+    .body {
+      width: 100%;
     }
   }
 }

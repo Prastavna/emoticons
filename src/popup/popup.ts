@@ -1,5 +1,6 @@
 import navElements from './navigation';
 import './popup.scss';
+import renderTabBody from './tabs';
 
 let currentTab = 'emoticons';
 
@@ -28,8 +29,8 @@ const updatePopup = () => {
   const popupHead = document.querySelector('#popup .head');
   
   popupHead.innerHTML = `<h2>${navElements.find(element => element.value === currentTab).name}</h2>`;
-  const popupBody = document.querySelector('#popup .body');
-  popupBody.innerHTML = `<div>${currentTab}</div>`;
+
+  renderTabBody(currentTab);
 }
 
 
