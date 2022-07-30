@@ -1,0 +1,44 @@
+#search-results {
+    height: 14rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .category-container {
+        margin-top: 0.3rem;
+
+        h4 {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+
+            color: grey;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
+        
+            list-style: none;
+            
+        
+            li {
+                height: 2.8rem;
+                width: 2.8rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+        
+                font-size: 1.5rem;
+                cursor: pointer;
+        
+                &:hover {
+                    background: #a9d7f7;
+                }
+            }
+        }
+    }
+}
