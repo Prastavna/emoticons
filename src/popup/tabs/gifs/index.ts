@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import axiosService from "../../../services/api";
+import './gifs.scss'
 
 const renderGifsAsGrid = (gifs: any) => {
     const gifsContainer = document.createElement("div");
@@ -10,8 +11,7 @@ const renderGifsAsGrid = (gifs: any) => {
             const gifContainer = document.createElement("div");
             gifContainer.classList.add("gif-container");
             const gifImage = document.createElement("img");
-            gifImage.src = gif.images.fixed_height.url;
-            gifImage.classList.add("gif-image");
+            gifImage.src = gif.images.preview_gif.url;
             gifContainer.appendChild(gifImage);
 
             gifContainer.addEventListener("click", () => {
@@ -33,10 +33,9 @@ const renderGifs = async (searchText: string) => {
     let gifs: any = [];
 
     try {
-        const response = await axiosService.get(searchText ? `/search` : '/trending', {
+        const response = await axiosService.get(searchText ? `/search?q=${searchText}` : '/trending', {
             params: {
-                q: searchText,
-                limit: 10
+                limit: 30
             }
         });
         gifs = response.data.data;

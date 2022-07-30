@@ -1,0 +1,17 @@
+.gifs-container {
+    height: 14rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+
+    .gif-container {
+        cursor: pointer;
+        
+        img {
+            height: 6rem;
+            width: auto;
+        }
+    }
+}
