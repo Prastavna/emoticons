@@ -1,4 +1,5 @@
 import renderEmoticons from "./emoticons";
+import renderGifs from "./gifs";
 import './tabs.scss'
 
 const popupBody = document.querySelector("#popup .body");
@@ -6,6 +7,8 @@ const popupBody = document.querySelector("#popup .body");
 const renderSearchResults = (tabName: string, searchText: string) => {
     if (tabName === 'emoticons') {
         popupBody.appendChild(renderEmoticons(searchText));
+    } else if(tabName === 'gifs') {
+        popupBody.appendChild(renderGifs(searchText));
     }
 }
 
