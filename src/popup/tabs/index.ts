@@ -1,3 +1,4 @@
+import debounce from "../../helpers/debounce";
 import renderEmoticons from "./emoticons";
 import renderGifs from "./gifs";
 import './tabs.scss'
@@ -23,14 +24,14 @@ const renderTabBody = (tabName: string) => {
     popupBody.innerHTML = "";
 
     let searchText = ""
-    searchBar.addEventListener("keyup", (e: KeyboardEvent) => {
+    searchBar.addEventListener("keyup", debounce((e: KeyboardEvent) => {
         // Accept alphanumeric characters or backspace
         if (e.key.match(/^[a-zA-Z0-9]$/) || e.key === "Backspace") {
             // remove special characters from search text
             searchText = searchBar.value.trim().replace(/[^a-zA-Z0-9]/g, "");
             renderSearchResults(tabName, searchText);
         }
-    })
+    }, 1200));
 
     popupBody.appendChild(searchBar);
     renderSearchResults(tabName, searchText);
