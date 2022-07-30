@@ -33,7 +33,7 @@ const renderGifs = async (searchText: string) => {
     let gifs: any = [];
 
     try {
-        const response = await axiosService.get(`/search`, {
+        const response = await axiosService.get(searchText ? `/search` : '/trending', {
             params: {
                 q: searchText,
                 limit: 10
