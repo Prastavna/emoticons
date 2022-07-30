@@ -3,7 +3,12 @@ import axiosService from "../../../services/api";
 import './gifs.scss'
 
 const renderGifsAsGrid = (gifs: any) => {
-    const gifsContainer = document.createElement("div");
+    let gifsContainer = document.querySelector('.gifs-container');
+    if(gifsContainer) {
+        gifsContainer.remove()
+    }
+
+    gifsContainer =  document.createElement("div");
     gifsContainer.classList.add("gifs-container");
 
     if(Array.isArray(gifs) && gifs.length > 0) {
