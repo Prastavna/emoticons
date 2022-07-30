@@ -2,12 +2,15 @@ import debounce from "../../helpers/debounce";
 import renderEmoticons from "./emoticons";
 import renderGifs from "./gifs";
 import './tabs.scss'
+import renderTextEmoticons from "./text-emoticons";
 
 const popupBody = document.querySelector("#popup .body");
 
 const renderSearchResults = (tabName: string, searchText: string) => {
     if (tabName === 'emoticons') {
         popupBody.appendChild(renderEmoticons(searchText));
+    } else if(tabName === 'text-emoticons') {
+        popupBody.appendChild(renderTextEmoticons(searchText));
     } else if(tabName === 'gifs') {
         renderGifs(searchText).then(gifs => {
             popupBody.appendChild(gifs);
