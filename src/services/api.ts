@@ -12,7 +12,7 @@ class AxiosService implements IAxiosService {
     private axios: AxiosInstance;
     constructor() {
         this.axios = axios.create({
-            baseURL: 'https://api.giphy.com/v1/gifs/',
+            baseURL: 'https://api.giphy.com/v1/stickers/',
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'

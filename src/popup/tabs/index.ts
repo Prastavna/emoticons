@@ -8,7 +8,9 @@ const renderSearchResults = (tabName: string, searchText: string) => {
     if (tabName === 'emoticons') {
         popupBody.appendChild(renderEmoticons(searchText));
     } else if(tabName === 'gifs') {
-        popupBody.appendChild(renderGifs(searchText));
+        renderGifs(searchText).then(gifs => {
+            popupBody.appendChild(gifs);
+        });
     }
 }
 
@@ -25,7 +27,7 @@ const renderTabBody = (tabName: string) => {
         // Accept alphanumeric characters or backspace
         if (e.key.match(/^[a-zA-Z0-9]$/) || e.key === "Backspace") {
             // remove special characters from search text
-            searchText = searchBar.value.replace(/[^a-zA-Z0-9]/g, "");;
+            searchText = searchBar.value.trim().replace(/[^a-zA-Z0-9]/g, "");
             renderSearchResults(tabName, searchText);
         }
     })
