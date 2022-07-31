@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import axiosService from "../../../services/api";
+import { axiosService } from "@services";
 import './gifs.scss'
 
 const renderGifsAsGrid = (gifs: any) => {
