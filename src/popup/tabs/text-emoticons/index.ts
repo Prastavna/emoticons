@@ -1,8 +1,7 @@
 
 import textEmoticonsList from './textEmoticonsList';
 import './textEmoticons.scss';
-import notyf from "../../../helpers/toast";
-import filterList from "../../../helpers/filterList";
+import { filterList, notyf } from "@helpers";
 
 const renderTextEmoticons = (searchText: string) => {
     const filteredList = filterList(textEmoticonsList, searchText);

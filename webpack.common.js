@@ -30,6 +30,8 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, 'src'),
       '@services': path.resolve(__dirname, 'src/services'),
+      '@helpers': path.resolve(__dirname, 'src/helpers'),
+      '@types': path.resolve(__dirname, 'src/types')
     }
   },
   output: {

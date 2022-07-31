@@ -9,6 +9,8 @@
     "paths": {
       "@": ["./src"],
       "@services": ["./src/services"],
+      "@helpers": ["./src/helpers"],
+      "@types": ["./src/types"]
     }
   }
 }

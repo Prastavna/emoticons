@@ -1,4 +1,4 @@
-import EmoticonObj from "../types/EmoticonObj";
+import EmoticonObj from "../types/Emoticons";
 
 const filterList = (list: EmoticonObj[], filter: string) => {
     if (filter === "") {

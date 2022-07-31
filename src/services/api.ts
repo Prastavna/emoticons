@@ -4,7 +4,7 @@ import { AxiosRequestConfig } from 'axios';
 import { AxiosPromise } from 'axios';
 import { AxiosInstance } from 'axios';
 
-import IAxiosService from '../types/AxiosService';
+import { AxiosService as IAxiosService } from '@types';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 

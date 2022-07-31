@@ -1,4 +1,4 @@
-import debounce from "../../helpers/debounce";
+import { debounce } from "@helpers";
 import renderEmoticons from "./emoticons";
 import renderGifs from "./gifs";
 import './tabs.scss'

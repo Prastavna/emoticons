@@ -1,4 +1,4 @@
-import TextEmoticons from "../../../types/TextEmoticonObj"
+import { TextEmoticons } from "@types"
 
 const textEmoticonsList: Array<TextEmoticons> = [
     {

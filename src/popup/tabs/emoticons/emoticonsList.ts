@@ -1,6 +1,6 @@
-import EmoticonObj from "../../../types/EmoticonObj"
+import { Emoticons } from "@types"
 
-const emoticonsList: Array<EmoticonObj> = [
+const emoticonsList: Array<Emoticons> = [
     {
         name: "Smileys & People",
         value: "smileys-and-people",
