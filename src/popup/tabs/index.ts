@@ -1,4 +1,5 @@
 import { debounce } from '@helpers'
+import { storageService } from '@services'
 import renderEmoticons from './emoticons'
 import renderGifs from './gifs'
 import './tabs.scss'
@@ -18,7 +19,7 @@ const renderSearchResults = (tabName: string, searchText: string) => {
     }
 }
 
-const renderTabBody = (tabName: string) => {
+const renderTabBody = async (tabName: string) => {
     //Adds search bar to the popup
     const searchBar = document.createElement('input')
     searchBar.type = 'text'
@@ -39,7 +40,19 @@ const renderTabBody = (tabName: string) => {
         }, 1200),
     )
 
+    const historyDataList = document.createElement('datalist')
+    historyDataList.id = 'history-data-list'
+    searchBar.setAttribute('list', 'history-data-list')
+
+    const history = await storageService.getStorageItem('history')
+    history.forEach((item) => {
+        const option = document.createElement('option')
+        option.value = item
+        historyDataList.appendChild(option)
+    })
+
     popupBody.appendChild(searchBar)
+    popupBody.appendChild(historyDataList)
     renderSearchResults(tabName, searchText)
 }
 
