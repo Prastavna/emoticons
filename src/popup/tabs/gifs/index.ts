@@ -29,6 +29,10 @@ const renderGifsAsGrid = (gifs: any) => {
 
             gifsContainer.appendChild(gifContainer)
         })
+    } else {
+        const noResults = document.createElement('div')
+        noResults.innerText = 'No results'
+        gifsContainer.appendChild(noResults)
     }
 
     return gifsContainer
