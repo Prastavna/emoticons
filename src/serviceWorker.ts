@@ -1,9 +1,14 @@
-import { initializeStorageWithDefaults } from './storage';
+import { storageService } from '@services';
 
 chrome.runtime.onInstalled.addListener(async () => {
   // Here goes everything you want to execute after extension initialization
 
-  await initializeStorageWithDefaults({});
+  await storageService.initializeStorageWithDefaults(
+    {
+      // Here goes everything you want to initialize with defaults
+      searchedText: [],
+    }
+  );
 
   console.log('Extension successfully installed!');
 });
