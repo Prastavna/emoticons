@@ -1,5 +1,5 @@
 export interface Storage {
-    searchedText: string[];
+    searchedText: string[]
 }
 
 export default Storage

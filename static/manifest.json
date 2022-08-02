@@ -1,40 +1,40 @@
 {
-  "name": "Emoticons",
-  "description": "A simple web extension to copy emojis & gifs to clipboard.",
-  "version": "0.0.0",
-  "manifest_version": 3,
-  "background": {
-    "service_worker": "serviceWorker.js"
-  },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["contentScript.js"]
+    "name": "Emoticons",
+    "description": "A simple web extension to copy emojis & gifs to clipboard.",
+    "version": "0.0.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "serviceWorker.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["contentScript.js"]
+        }
+    ],
+    "permissions": ["storage", "scripting"],
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": true
+    },
+    "action": {
+        "default_title": "Emoticons",
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "/icons/16x.png",
+            "32": "/icons/32x.png",
+            "48": "/icons/48x.png",
+            "64": "/icons/64x.png",
+            "128": "/icons/128x.png",
+            "256": "/icons/256x.png"
+        }
+    },
+    "icons": {
+        "16": "/icons/16x.png",
+        "32": "/icons/32x.png",
+        "48": "/icons/48x.png",
+        "64": "/icons/64x.png",
+        "128": "/icons/128x.png",
+        "256": "/icons/256x.png"
     }
-  ],
-  "permissions": ["storage", "scripting"],
-  "options_ui": {
-    "page": "options.html",
-    "open_in_tab": true
-  },
-  "action": {
-    "default_title": "Emoticons",
-    "default_popup": "popup.html",
-    "default_icon": {
-      "16": "/icons/16x.png",
-      "32": "/icons/32x.png",
-      "48": "/icons/48x.png",
-      "64": "/icons/64x.png",
-      "128": "/icons/128x.png",
-      "256": "/icons/256x.png"
-    }
-  },
-  "icons": {
-    "16": "/icons/16x.png",
-    "32": "/icons/32x.png",
-    "48": "/icons/48x.png",
-    "64": "/icons/64x.png",
-    "128": "/icons/128x.png",
-    "256": "/icons/256x.png"
-  }
 }

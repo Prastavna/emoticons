@@ -1,13 +1,13 @@
 interface Category {
-    name: string;
-    value: string;
-    tags: string[];
+    name: string
+    value: string
+    tags: string[]
 }
 interface TextEmoticons {
-    name: string;
-    value: string;
-    icon?: string;
-    items: Category[];
+    name: string
+    value: string
+    icon?: string
+    items: Category[]
 }
 
-export default TextEmoticons;
+export default TextEmoticons

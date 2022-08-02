@@ -1,1 +1,1 @@
-import './options.scss';
+import './options.scss'
