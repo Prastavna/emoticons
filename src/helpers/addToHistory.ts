@@ -1,7 +1,7 @@
 import { storageService } from "@services"
 
 const addToHistory = async (searchedText: string) => {
-    const historyLen = 5
+    const historyLen = 2
     const prevHistory = await storageService.getStorageItem('history');
 
     if(prevHistory.length >= historyLen) {
