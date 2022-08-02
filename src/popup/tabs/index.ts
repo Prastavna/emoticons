@@ -30,14 +30,11 @@ const renderTabBody = async (tabName: string) => {
     let searchText = ''
     searchBar.addEventListener(
         'keyup',
-        debounce((e: KeyboardEvent) => {
+        debounce(() => {
             // Accept alphanumeric characters or backspace
-            if (e.key.match(/^[a-zA-Z0-9]$/) || e.key === 'Backspace') {
-                // remove special characters from search text
-                searchText = searchBar.value.trim().replace(/[^a-zA-Z0-9]/g, '')
-                renderSearchResults(tabName, searchText)
-            }
-        }, 1200),
+            searchText = searchBar.value.trim().replace(/[^a-zA-Z0-9]/g, '')
+            renderSearchResults(tabName, searchText)
+        }, 1000),
     )
 
     const historyDataList = document.createElement('datalist')
@@ -48,6 +45,7 @@ const renderTabBody = async (tabName: string) => {
     history.forEach((item) => {
         const option = document.createElement('option')
         option.value = item
+        option.innerText = item
         historyDataList.appendChild(option)
     })
 

@@ -12,7 +12,7 @@ const addToHistory = async (searchedText: string) => {
         prevHistory.splice(prevHistory.indexOf(searchedText), 1)
     }
 
-    prevHistory.unshift(searchedText)
+    prevHistory.unshift(searchedText.toLowerCase())
     await storageService.setStorageItem('history', prevHistory)
 }
 
