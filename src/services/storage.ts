@@ -30,7 +30,7 @@ class StorageService implements IStorageService {
         })
     }
 
-    getStorageItem<Key extends 'searchedText'>(key: Key): Promise<Storage[Key]> {
+    getStorageItem<Key extends keyof Storage>(key: Key): Promise<Storage[Key]> {
         return new Promise((resolve, reject) => {
             chrome.storage.sync.get([key], (result) => {
                 if (chrome.runtime.lastError) {
@@ -42,7 +42,7 @@ class StorageService implements IStorageService {
         })
     }
 
-    setStorageItem<Key extends 'searchedText'>(key: Key, value: Storage[Key]): Promise<void> {
+    setStorageItem<Key extends keyof Storage>(key: Key, value: Storage[Key]): Promise<void> {
         return new Promise((resolve, reject) => {
             chrome.storage.sync.set({ [key]: value }, () => {
                 if (chrome.runtime.lastError) {

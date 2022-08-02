@@ -5,7 +5,7 @@ chrome.runtime.onInstalled.addListener(async () => {
 
     await storageService.initializeStorageWithDefaults({
         // Here goes everything you want to initialize with defaults
-        searchedText: [],
+        history: [],
     })
 
     console.log('Extension successfully installed!')

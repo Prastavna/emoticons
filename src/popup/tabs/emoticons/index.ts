@@ -1,6 +1,6 @@
 import emoticonsList from './emoticonsList'
 import './emoticons.scss'
-import { filterList, notyf } from '@helpers'
+import { addToHistory, filterList, notyf } from '@helpers'
 
 const renderEmoticons = (searchText: string) => {
     const filteredList = filterList(emoticonsList, searchText)
@@ -29,6 +29,7 @@ const renderEmoticons = (searchText: string) => {
                 </span>`
             listItem.addEventListener('click', () => {
                 // Copy the value to clipboard
+                addToHistory(item.name)
                 navigator.clipboard.writeText(item.value)
                 notyf.success(`Copied ${item.value} to clipboard`)
             })
