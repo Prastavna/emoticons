@@ -4,7 +4,7 @@ body {
     display: flex;
 
     nav {
-        background: wheat;
+        background: $primary;
         width: 10%;
         height: 100%;
 
@@ -18,7 +18,11 @@ body {
             border-bottom: 1px solid black;
             cursor: pointer;
             &:hover {
-                background: #f0f0f0;
+                background: $secondary;
+            }
+
+            &.active-tab {
+                background: $secondary;
             }
         }
     }
