@@ -39,12 +39,6 @@ const renderEmoticons = (searchText: string) => {
         searchResultsContainer.appendChild(categoryContainer)
     })
 
-    // Check if list container already exists
-    const prevListContainer = document.querySelector('#search-results')
-    if (prevListContainer) {
-        prevListContainer.remove()
-    }
-
     return searchResultsContainer
 }
 

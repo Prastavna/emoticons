@@ -8,6 +8,12 @@ import renderTextEmoticons from './text-emoticons'
 const popupBody = document.querySelector('#popup .body')
 
 const renderSearchResults = (tabName: string, searchText: string) => {
+    // Check if list container already exists
+    const prevListContainer = document.querySelector('#search-results')
+    if (prevListContainer) {
+        prevListContainer.remove()
+    }
+    
     if (tabName === 'emoticons') {
         popupBody.appendChild(renderEmoticons(searchText))
     } else if (tabName === 'text-emoticons') {
